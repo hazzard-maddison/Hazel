@@ -49,7 +49,7 @@ project "Hazel"
 
 	filter "system:windows"
 		cppdialect "C++20"
-		staticruntime "On"
+		staticruntime "off"
 		systemversion "10.0.19041.0"
 
 		defines
@@ -103,7 +103,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++20"
-		staticruntime "On"
+		staticruntime "off"
 		systemversion "10.0.19041.0"
 
 		defines
