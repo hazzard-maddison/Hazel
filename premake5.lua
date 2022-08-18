@@ -26,11 +26,12 @@ project "Hazel"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include/",
+		"%{prj.name}/src/"
 	}
 
 	filter "system:windows"
-		cppdialect "C++latest"
+		cppdialect "C++20"
 		staticruntime "On"
 		systemversion "10.0.19041.0"
 
@@ -84,7 +85,7 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++latest"
+		cppdialect "C++20"
 		staticruntime "On"
 		systemversion "10.0.19041.0"
 
