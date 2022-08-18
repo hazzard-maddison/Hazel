@@ -44,12 +44,6 @@ namespace Hazel {
 	class HAZEL_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
-
-	};
-
-	class HAZEL_API KeyReleasedEvent : public KeyEvent
-	{
-	public:
 		KeyReleasedEvent(int keycode):
 			KeyEvent(keycode) {}
 
