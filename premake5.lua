@@ -1,8 +1,3 @@
-function script_path()
-   local str = debug.getinfo(2, "S").source:sub(2)
-   return str:match("(.*/)")
-end
-
 workspace "Hazel"
 	architecture "x86_64"
 	startproject "Sandbox"
@@ -14,10 +9,9 @@ workspace "Hazel"
 		"Dist"
 	}
 
-solution_dir = script_path() -- the location of main.lua breaks if moved from solution dir
 output_dir   = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
-bin_dir = solution_dir .. "/bin/" .. output_dir
-bin_int_dir = solution_dir .. "/bin-int/" .. output_dir
+bin_dir = "bin/" .. output_dir
+bin_int_dir = "bin-int/" .. output_dir
 
 -- Include directories relative to root folder (solution dir)
 IncludeDir = {}
