@@ -168,9 +168,11 @@
     <ClInclude Include="src\Hazel\ImGui\imstb_textedit.h" />
     <ClInclude Include="src\Hazel\ImGui\imstb_truetype.h" />
     <ClInclude Include="src\Hazel\Input.h" />
+    <ClInclude Include="src\Hazel\KeyCodes.h" />
     <ClInclude Include="src\Hazel\Layer.h" />
     <ClInclude Include="src\Hazel\LayerStack.h" />
     <ClInclude Include="src\Hazel\Log.h" />
+    <ClInclude Include="src\Hazel\MouseButtonCodes.h" />
     <ClInclude Include="src\Hazel\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Hazel\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Hazel\Window.h" />
