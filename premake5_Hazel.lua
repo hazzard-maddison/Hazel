@@ -2,6 +2,7 @@ project "Hazel"
 	location "Hazel"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir (bin_dir .. "/%{prj.name}")
 	objdir (bin_int_dir .. "/%{prj.name}")
@@ -34,7 +35,6 @@ project "Hazel"
 
 	filter "system:windows"
 		cppdialect "C++20"
-		staticruntime "off"
 		systemversion "10.0.19041.0"
 
 		defines
@@ -52,12 +52,15 @@ project "Hazel"
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
+		runtime "Release"
 		optimize "On"

@@ -2,6 +2,7 @@ project "Glad"
     location "Hazel/vendor/Glad"
     kind "StaticLib"
     language "C"
+    staticruntime "off"
 
     targetdir (bin_dir .. "/%{prj.name}")
 	objdir (bin_int_dir .. "/%{prj.name}")
@@ -20,10 +21,7 @@ project "Glad"
 
     filter "system:windows"
         systemversion "10.0.19041.0"
-        staticruntime "on"
-
-    filter {"system:windows", "configurations:Release"}
-        buildoptions "/MT"
+        
 
     filter "configurations:Debug"
         runtime "Debug"

@@ -2,6 +2,7 @@ project "GLFW"
     location "Hazel/vendor/GLFW"
     kind "StaticLib"
     language "C"
+    staticruntime "on"
 
     targetdir (bin_dir .. "/%{prj.name}")
 	objdir (bin_int_dir .. "/%{prj.name}")
@@ -56,7 +57,6 @@ project "GLFW"
     
     filter "system:windows"
         systemversion "10.0.19041.0"
-        staticruntime "on"
 
         files
         {
@@ -94,7 +94,4 @@ project "GLFW"
     filter "configurations:Dist"
         runtime "Release"
         symbols "on"
-
-    symbols "off"
-
     

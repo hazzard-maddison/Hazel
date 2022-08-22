@@ -34,10 +34,6 @@ project "imgui"
         "Hazel/vendor/imgui"
     }
 
-    -- links
-    -- {
-    --     -- "GLFW"
-    -- }
 
     filter "system:windows"
         systemversion "10.0.19041.0"

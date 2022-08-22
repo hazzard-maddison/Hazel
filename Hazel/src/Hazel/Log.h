@@ -1,8 +1,11 @@
 #pragma once
 
 #include "Core.h"
+// this ignores all warnings raised inside external headers
+#pragma warning(push, 0)
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
+#pragma warnging(pop)
 
 namespace Hazel {
 
