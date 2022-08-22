@@ -17,6 +17,7 @@ bin_int_dir = "bin-int/" .. output_dir
 IncludeDir = {}
 IncludeDir["GLFW"] = "Hazel/vendor/GLFW/include"
 IncludeDir["Glad"] = "Hazel/vendor/Glad/include"
+IncludeDir["glm"]  = "Hazel/vendor/glm"
 -- IncludeDir["imgui"] = "Hazel/vendor/imgui"
 
 

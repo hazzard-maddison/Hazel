@@ -23,6 +23,7 @@ project "Hazel"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		-- "%{IncludeDir.imgui}",
+		"%{IncludeDir.glm}",
 	}
 
 	links
