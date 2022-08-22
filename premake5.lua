@@ -17,10 +17,13 @@ bin_int_dir = "bin-int/" .. output_dir
 IncludeDir = {}
 IncludeDir["GLFW"] = "Hazel/vendor/GLFW/include"
 IncludeDir["Glad"] = "Hazel/vendor/Glad/include"
+-- IncludeDir["imgui"] = "Hazel/vendor/imgui"
+
 
 group "vendor"
     include "premake5_GLFW.lua"
     include "premake5_Glad.lua"
+	-- include "premake5_imgui.lua"
 
 group ""
     include "premake5_Hazel.lua"

@@ -7,6 +7,9 @@
     <Filter Include="Hazel\Events">
       <UniqueIdentifier>{5DEF92FE-4952-22A3-F2D7-5A59DE19EE25}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hazel\ImGui">
+      <UniqueIdentifier>{83AD5E9B-EF62-D790-7857-D167E40BCE94}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Hazel\Platform">
       <UniqueIdentifier>{0D422A0B-F90F-1E11-E2A3-8E37CE10FA75}</UniqueIdentifier>
     </Filter>
@@ -37,6 +40,36 @@
     <ClInclude Include="src\Hazel\Events\MouseEvent.h">
       <Filter>Hazel\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hazel\ImGui\ImGuiLayer.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\ImGui\imconfig.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\ImGui\imgui.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\ImGui\imgui_impl_glfw.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\ImGui\imgui_impl_opengl3.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\ImGui\imgui_impl_opengl3_loader.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\ImGui\imgui_internal.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\ImGui\imstb_rectpack.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\ImGui\imstb_textedit.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\ImGui\imstb_truetype.h">
+      <Filter>Hazel\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hazel\Layer.h">
       <Filter>Hazel</Filter>
     </ClInclude>
@@ -57,6 +90,30 @@
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp">
       <Filter>Hazel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\ImGui\ImGuiLayer.cpp">
+      <Filter>Hazel\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\ImGui\imgui.cpp">
+      <Filter>Hazel\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\ImGui\imgui_demo.cpp">
+      <Filter>Hazel\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\ImGui\imgui_draw.cpp">
+      <Filter>Hazel\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\ImGui\imgui_impl_glfw.cpp">
+      <Filter>Hazel\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\ImGui\imgui_impl_opengl3.cpp">
+      <Filter>Hazel\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\ImGui\imgui_tables.cpp">
+      <Filter>Hazel\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\ImGui\imgui_widgets.cpp">
+      <Filter>Hazel\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Hazel\Layer.cpp">
       <Filter>Hazel</Filter>

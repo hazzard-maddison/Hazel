@@ -25,4 +25,14 @@ project "Glad"
     filter {"system:windows", "configurations:Release"}
         buildoptions "/MT"
 
+    filter "configurations:Debug"
+        runtime "Debug"
+        symbols "on"
     
+    filter "configurations:Release"
+        runtime "Release"
+        symbols "on"
+    
+    filter "configurations:Dist"
+        runtime "Release"
+        symbols "on"

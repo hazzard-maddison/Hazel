@@ -21,12 +21,14 @@ project "Hazel"
 		"%{prj.name}/src/",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
+		-- "%{IncludeDir.imgui}",
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		-- "imgui",
 		"opengl32.lib"
 	}
 
