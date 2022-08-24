@@ -34,6 +34,9 @@ project "Hazel"
 		"opengl32.lib"
 	}
 
+	filter "files:src/imgui/**.cpp"
+		flags {"NoPCH"}
+
 	filter "system:windows"
 		cppdialect "C++20"
 		systemversion "10.0.19041.0"

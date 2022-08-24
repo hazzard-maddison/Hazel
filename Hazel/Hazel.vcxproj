@@ -158,15 +158,6 @@
     <ClInclude Include="src\Hazel\Events\KeyEvent.h" />
     <ClInclude Include="src\Hazel\Events\MouseEvent.h" />
     <ClInclude Include="src\Hazel\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Hazel\ImGui\imconfig.h" />
-    <ClInclude Include="src\Hazel\ImGui\imgui.h" />
-    <ClInclude Include="src\Hazel\ImGui\imgui_impl_glfw.h" />
-    <ClInclude Include="src\Hazel\ImGui\imgui_impl_opengl3.h" />
-    <ClInclude Include="src\Hazel\ImGui\imgui_impl_opengl3_loader.h" />
-    <ClInclude Include="src\Hazel\ImGui\imgui_internal.h" />
-    <ClInclude Include="src\Hazel\ImGui\imstb_rectpack.h" />
-    <ClInclude Include="src\Hazel\ImGui\imstb_textedit.h" />
-    <ClInclude Include="src\Hazel\ImGui\imstb_truetype.h" />
     <ClInclude Include="src\Hazel\Input.h" />
     <ClInclude Include="src\Hazel\KeyCodes.h" />
     <ClInclude Include="src\Hazel\Layer.h" />
@@ -177,17 +168,19 @@
     <ClInclude Include="src\Hazel\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Hazel\Window.h" />
     <ClInclude Include="src\hzpch.h" />
+    <ClInclude Include="src\imgui\imconfig.h" />
+    <ClInclude Include="src\imgui\imgui.h" />
+    <ClInclude Include="src\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="src\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="src\imgui\imgui_internal.h" />
+    <ClInclude Include="src\imgui\imstb_rectpack.h" />
+    <ClInclude Include="src\imgui\imstb_textedit.h" />
+    <ClInclude Include="src\imgui\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp" />
     <ClCompile Include="src\Hazel\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Hazel\ImGui\imgui.cpp" />
-    <ClCompile Include="src\Hazel\ImGui\imgui_demo.cpp" />
-    <ClCompile Include="src\Hazel\ImGui\imgui_draw.cpp" />
-    <ClCompile Include="src\Hazel\ImGui\imgui_impl_glfw.cpp" />
-    <ClCompile Include="src\Hazel\ImGui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="src\Hazel\ImGui\imgui_tables.cpp" />
-    <ClCompile Include="src\Hazel\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="src\Hazel\Layer.cpp" />
     <ClCompile Include="src\Hazel\LayerStack.cpp" />
     <ClCompile Include="src\Hazel\Log.cpp" />
@@ -196,6 +189,13 @@
     <ClCompile Include="src\hzpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\imgui\imgui.cpp" />
+    <ClCompile Include="src\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\imgui\imgui_tables.cpp" />
+    <ClCompile Include="src\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

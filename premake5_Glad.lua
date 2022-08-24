@@ -2,7 +2,7 @@ project "Glad"
     location "Hazel/vendor/Glad"
     kind "StaticLib"
     language "C"
-    staticruntime "off"
+    staticruntime "on"
 
     targetdir (bin_dir .. "/%{prj.name}")
 	objdir (bin_int_dir .. "/%{prj.name}")

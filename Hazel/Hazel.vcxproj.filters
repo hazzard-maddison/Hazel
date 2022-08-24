@@ -16,6 +16,9 @@
     <Filter Include="Hazel\Platform\Windows">
       <UniqueIdentifier>{47A9AB1A-33A3-D46C-1C10-6B7D08A93AD9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{0098A80F-6CAC-D0C0-352E-7420A101CDF1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Hazel.h" />
@@ -41,33 +44,6 @@
       <Filter>Hazel\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Hazel\ImGui\ImGuiLayer.h">
-      <Filter>Hazel\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hazel\ImGui\imconfig.h">
-      <Filter>Hazel\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hazel\ImGui\imgui.h">
-      <Filter>Hazel\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hazel\ImGui\imgui_impl_glfw.h">
-      <Filter>Hazel\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hazel\ImGui\imgui_impl_opengl3.h">
-      <Filter>Hazel\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hazel\ImGui\imgui_impl_opengl3_loader.h">
-      <Filter>Hazel\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hazel\ImGui\imgui_internal.h">
-      <Filter>Hazel\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hazel\ImGui\imstb_rectpack.h">
-      <Filter>Hazel\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hazel\ImGui\imstb_textedit.h">
-      <Filter>Hazel\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hazel\ImGui\imstb_truetype.h">
       <Filter>Hazel\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\Hazel\Input.h">
@@ -98,33 +74,39 @@
       <Filter>Hazel</Filter>
     </ClInclude>
     <ClInclude Include="src\hzpch.h" />
+    <ClInclude Include="src\imgui\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_impl_glfw.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_impl_opengl3.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_impl_opengl3_loader.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp">
       <Filter>Hazel</Filter>
     </ClCompile>
     <ClCompile Include="src\Hazel\ImGui\ImGuiLayer.cpp">
-      <Filter>Hazel\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hazel\ImGui\imgui.cpp">
-      <Filter>Hazel\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hazel\ImGui\imgui_demo.cpp">
-      <Filter>Hazel\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hazel\ImGui\imgui_draw.cpp">
-      <Filter>Hazel\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hazel\ImGui\imgui_impl_glfw.cpp">
-      <Filter>Hazel\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hazel\ImGui\imgui_impl_opengl3.cpp">
-      <Filter>Hazel\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hazel\ImGui\imgui_tables.cpp">
-      <Filter>Hazel\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hazel\ImGui\imgui_widgets.cpp">
       <Filter>Hazel\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Hazel\Layer.cpp">
@@ -143,5 +125,26 @@
       <Filter>Hazel\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\hzpch.cpp" />
+    <ClCompile Include="src\imgui\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_impl_glfw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_impl_opengl3.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
