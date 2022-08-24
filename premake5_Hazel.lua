@@ -34,7 +34,7 @@ project "Hazel"
 		"opengl32.lib"
 	}
 
-	filter "files:src/imgui/**.cpp"
+	filter "files:Hazel/src/imgui/**.cpp"
 		flags {"NoPCH"}
 
 	filter "system:windows"
