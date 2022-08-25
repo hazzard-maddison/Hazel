@@ -1,11 +1,13 @@
 project "imgui"
     location "Hazel/vendor/imgui"
     kind "StaticLib"
+    staticruntime "on"
     language "C++"
-    staticruntime "off"
+    cppdialect "C++20"
+    
 
-    targetdir(bin_dir.."/%{prj.name}")
-    objdir(bin_int_dir.."/%{prj.name}")
+    targetdir (bin_dir .. "/%{prj.name}")
+	objdir (bin_int_dir .. "/%{prj.name}")
 
     files
     {
@@ -38,25 +40,13 @@ project "imgui"
 
     filter "system:windows"
         systemversion "10.0.19041.0"
-        cppdialect "C++20"
         
-
     
    filter "configurations:Debug"
-		defines "HZ_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
 		runtime "Release"
-		optimize "On"
-
-	filter "configurations:Dist"
-		defines "HZ_DIST"
-		runtime "Release"
-		optimize "On"
-    -- filter {"system:windows", "configurations:Release"}
-    --     buildoptions "/MT"
-
+		optimize "on"
     

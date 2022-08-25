@@ -89,9 +89,4 @@ project "GLFW"
     
     filter "configurations:Release"
         runtime "Release"
-        symbols "on"
-    
-    filter "configurations:Dist"
-        runtime "Release"
-        symbols "on"
-    
+        optimize "on"

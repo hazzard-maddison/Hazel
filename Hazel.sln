@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLFW", "Hazel\vendor\GLFW\G
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Glad", "Hazel\vendor\Glad\Glad.vcxproj", "{BDD6857C-A90D-870D-52FA-6C103E10030F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgui", "Hazel\vendor\imgui\imgui.vcxproj", "{0098A80F-6CAC-D0C0-352E-7420A101CDF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -42,6 +44,12 @@ Global
 		{BDD6857C-A90D-870D-52FA-6C103E10030F}.Dist|x64.Build.0 = Dist|x64
 		{BDD6857C-A90D-870D-52FA-6C103E10030F}.Release|x64.ActiveCfg = Release|x64
 		{BDD6857C-A90D-870D-52FA-6C103E10030F}.Release|x64.Build.0 = Release|x64
+		{0098A80F-6CAC-D0C0-352E-7420A101CDF1}.Debug|x64.ActiveCfg = Debug|x64
+		{0098A80F-6CAC-D0C0-352E-7420A101CDF1}.Debug|x64.Build.0 = Debug|x64
+		{0098A80F-6CAC-D0C0-352E-7420A101CDF1}.Dist|x64.ActiveCfg = Dist|x64
+		{0098A80F-6CAC-D0C0-352E-7420A101CDF1}.Dist|x64.Build.0 = Dist|x64
+		{0098A80F-6CAC-D0C0-352E-7420A101CDF1}.Release|x64.ActiveCfg = Release|x64
+		{0098A80F-6CAC-D0C0-352E-7420A101CDF1}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +57,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{154B857C-0182-860D-AA6E-6C109684020F} = {5AF56B53-4658-FBF7-EFDD-33AEDB1FC77A}
 		{BDD6857C-A90D-870D-52FA-6C103E10030F} = {5AF56B53-4658-FBF7-EFDD-33AEDB1FC77A}
+		{0098A80F-6CAC-D0C0-352E-7420A101CDF1} = {5AF56B53-4658-FBF7-EFDD-33AEDB1FC77A}
 	EndGlobalSection
 EndGlobal

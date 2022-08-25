@@ -1,8 +1,10 @@
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
+	staticruntime "on"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++20"
+	
 
 
 	targetdir (bin_dir .. "/%{prj.name}")
@@ -18,6 +20,7 @@ project "Sandbox"
 	{
 		"Hazel/vendor/spdlog/include",
 		"Hazel/src",
+		"Hazel/vendor",
 		"%{IncludeDir.glm}",
 	}
 
@@ -27,7 +30,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++20"
 		systemversion "10.0.19041.0"
 
 		defines
@@ -43,9 +45,9 @@ project "Sandbox"
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"

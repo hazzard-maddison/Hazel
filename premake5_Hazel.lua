@@ -1,8 +1,9 @@
 project "Hazel"
 	location "Hazel"
-	kind "SharedLib"
+	kind "StaticLib"
+	staticruntime "on"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++20"
 
 	targetdir (bin_dir .. "/%{prj.name}")
 	objdir (bin_int_dir .. "/%{prj.name}")
@@ -13,7 +14,9 @@ project "Hazel"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/**.hpp",
+		"%{prj.name}/vendor/glm/**.inl"
 	}
 
 	includedirs
@@ -22,23 +25,20 @@ project "Hazel"
 		"%{prj.name}/src/",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		-- "%{IncludeDir.imgui}",
-		"%{IncludeDir.glm}",
+		"%{IncludeDir.imgui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
-		-- "imgui",
+		"imgui",
 		"opengl32.lib"
 	}
 
-	filter "files:Hazel/src/imgui/**.cpp"
-		flags {"NoPCH"}
 
 	filter "system:windows"
-		cppdialect "C++20"
 		systemversion "10.0.19041.0"
 
 		defines
@@ -49,22 +49,22 @@ project "Hazel"
 		}
 		
 
-		postbuildcommands
-		{
-			"copy $(TargetDir)\\Hazel.dll $(SolutionDir)bin\\"..output_dir.."\\Sandbox\\"
-		}
+		-- postbuildcommands
+		-- {
+		-- 	"copy $(TargetDir)\\Hazel.dll $(SolutionDir)bin\\"..output_dir.."\\Sandbox\\"
+		-- }
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
