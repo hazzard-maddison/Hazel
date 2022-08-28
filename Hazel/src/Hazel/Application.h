@@ -12,6 +12,7 @@
 #include "Hazel/Renderer/Shader.h"
 #include "Hazel/Renderer/Buffer.h"
 #include "Hazel/Renderer/VertexArray.h"
+#include <Hazel/Renderer/Renderer.h>
 
 namespace Hazel{
 
@@ -32,6 +33,8 @@ namespace Hazel{
 		inline Window& GetWindow() { return *m_Window; }
 		inline static Application& Get() { return *s_Instance; }
 
+		virtual void Update() = 0;
+
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
@@ -41,13 +44,6 @@ namespace Hazel{
 
 		LayerStack m_LayerStack;
 
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-		
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
 
 	private:
 		static Application* s_Instance;

@@ -1,7 +1,7 @@
 #include "hzpch.h"
 #include "Buffer.h"
 #include "Renderer.h"
-#include "Hazel/Platform/OpenGL/OpenGLBuffer.h"
+#include "Platform/OpenGL/OpenGLBuffer.h"
 
 
 namespace Hazel {
@@ -10,13 +10,13 @@ namespace Hazel {
 	{
 		switch (Renderer::GetAPI())
 		{
-			case RendererAPI::None :
+		case RendererAPI::API::None :
 			{
 				HZ_CORE_ASSERT(false, "RendererAPI::None is not supported");
 				return nullptr;
 			}break;
 
-			case RendererAPI::OpenGL :
+		case RendererAPI::API::OpenGL :
 			{
 				return new OpenGLVertexBuffer(vertices, size);
 			}break;
@@ -31,13 +31,13 @@ namespace Hazel {
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None:
+		case RendererAPI::API::None:
 		{
 			HZ_CORE_ASSERT(false, "RendererAPI::None is not supported");
 			return nullptr;
 		}break;
 
-		case RendererAPI::OpenGL:
+		case RendererAPI::API::OpenGL:
 		{
 			return new OpenGLIndexBuffer(indices, size);
 		}break;

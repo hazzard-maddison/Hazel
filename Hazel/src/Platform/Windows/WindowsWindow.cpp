@@ -5,7 +5,7 @@
 #include "Hazel/Events/KeyEvent.h"
 #include "Hazel/Events/ApplicationEvent.h"
 
-#include "Hazel/Platform/OpenGL/OpenGLContext.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 
 
 
