@@ -1,6 +1,7 @@
 #include "hzpch.h"
 #include "Shader.h"
 #include <glad/glad.h>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace Hazel {
 
@@ -32,6 +33,7 @@ namespace Hazel {
 			// We don't need the shader anymore
 			glDeleteShader(vertexShader);
 
+			HZ_CORE_ERROR(vertexSrc);
 			HZ_CORE_ERROR("{0}", infoLog.data());
 			HZ_CORE_ASSERT(false, "Vertex shader compilation failure");
 			return;
@@ -62,6 +64,7 @@ namespace Hazel {
 			// Either of them. Don't leak shaders!
 			glDeleteShader(vertexShader);
 
+			HZ_CORE_ERROR(fragmentSrc);
 			HZ_CORE_ERROR("{0}",infoLog.data());
 			HZ_CORE_ASSERT(false,"Fragment shader compilation failure");
 			return;
@@ -121,6 +124,12 @@ namespace Hazel {
 	void Shader::Unbind() const
 	{
 		glUseProgram(0);
+	}
+
+	void Shader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix)
+	{
+		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
 	}
 }
 

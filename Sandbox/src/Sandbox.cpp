@@ -1,5 +1,6 @@
 #include <Hazel.h>
 
+#include <Hazel/Renderer/OrthographicCamera.h>
 
 #include <imgui/imgui.h>
 class ExampleLayer : public Hazel::Layer
@@ -34,7 +35,8 @@ public:
 class Sandbox : public Hazel::Application
 {
 public:
-	Sandbox()
+	Sandbox() :
+		m_Camera(-1.6f, 1.6f, -0.9f, 0.9f)
 	{
 		PushOverlay(new ExampleLayer());
 
@@ -44,7 +46,7 @@ public:
 		float vertices[7 * 3] = {
 			-0.5f, -0.5f, 0.0f,    1.0f, 1.0f, 0.0f, 1.0f,
 			 0.5f, -0.5f, 0.0f,    0.0f, 1.0f, 1.0f, 1.0f,
-			 0.0f,  0.5f, 0.0f,    1.0f, 0.0f, 1.0f, 1.0f,
+			 0.0f,  0.25f, 0.0f,    1.0f, 0.0f, 1.0f, 1.0f,
 		};
 
 		std::shared_ptr<Hazel::VertexBuffer> vertexBuffer;
@@ -68,6 +70,8 @@ public:
 			layout(location = 0) in vec3 a_Position;
 			layout(location = 1) in vec4 a_Color;
 
+			uniform mat4 u_ViewProjection;
+
 			out vec3 v_Position;
 			out vec4 v_Color;
 
@@ -75,7 +79,7 @@ public:
 			{
 				v_Position = a_Position;
 				v_Color = a_Color;
-				gl_Position = vec4(a_Position, 1.0);
+				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
 			}
 		)";
 
@@ -127,10 +131,12 @@ public:
 
 			out vec3 v_Position;
 
+			uniform mat4 u_ViewProjection;
+
 			void main()
 			{
-				v_Position = a_Position;
-				gl_Position = vec4(a_Position, 1.0);
+				v_Position =  a_Position;
+				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
 			}
 		)";
 
@@ -162,14 +168,14 @@ public:
 		Hazel::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Hazel::RenderCommand::Clear();
 
+		m_Camera.SetPosition( { 1.0f, 0.0f, 0.0f } );
+		m_Camera.SetRotation(45.0f);
 
-		Hazel::Renderer::BeginScene();
+		Hazel::Renderer::BeginScene(m_Camera);
 
-		m_BlueShader->Bind();
-		Hazel::Renderer::Submit(m_SquareVA);
+		Hazel::Renderer::Submit(m_BlueShader,m_SquareVA);
 
-		m_Shader->Bind();
-		Hazel::Renderer::Submit(m_VertexArray);
+		Hazel::Renderer::Submit(m_Shader,m_VertexArray);
 
 		Hazel::Renderer::EndScene();
 	}
@@ -181,6 +187,9 @@ private:
 
 	std::shared_ptr<Hazel::Shader> m_BlueShader;
 	std::shared_ptr<Hazel::VertexArray> m_SquareVA;
+
+	Hazel::OrthographicCamera m_Camera;
+
 };
 
 Hazel::Application* Hazel::CreateApplication()
