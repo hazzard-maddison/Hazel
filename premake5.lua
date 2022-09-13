@@ -18,8 +18,9 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Hazel/vendor/GLFW/include"
 IncludeDir["Glad"] = "Hazel/vendor/Glad/include"
 IncludeDir["glm"]  = "Hazel/vendor/glm"
-IncludeDir["imgui"] = "Hazel/vendor/imgui" 
--- LNK2005 errors using Chernos method of imgui integration. copy files into Hazel project
+IncludeDir["imgui"] = "Hazel/vendor/imgui"
+IncludeDir["stb_image"] = "Hazel/vendor/stb_image"
+
 
 
 group "vendor"
