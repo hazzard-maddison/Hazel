@@ -6,7 +6,7 @@
 
 namespace Hazel {
 
-	VertexBuffer* VertexBuffer::Create(float* vertices, uint32_t size)
+	Ref<VertexBuffer> VertexBuffer::Create(float* vertices, uint32_t size)
 	{
 		switch (Renderer::GetAPI())
 		{
@@ -18,7 +18,7 @@ namespace Hazel {
 
 		case RendererAPI::API::OpenGL :
 			{
-				return new OpenGLVertexBuffer(vertices, size);
+				return std::make_shared<OpenGLVertexBuffer>(vertices, size);
 			}break;
 
 		};
@@ -27,7 +27,7 @@ namespace Hazel {
 		return nullptr;
 	}
 
-	IndexBuffer* IndexBuffer::Create(uint32_t* indices, uint32_t size)
+	Ref<IndexBuffer> IndexBuffer::Create(uint32_t* indices, uint32_t size)
 	{
 		switch (Renderer::GetAPI())
 		{
@@ -39,7 +39,7 @@ namespace Hazel {
 
 		case RendererAPI::API::OpenGL:
 		{
-			return new OpenGLIndexBuffer(indices, size);
+			return std::make_shared<OpenGLIndexBuffer>(indices, size);
 		}break;
 
 		};
