@@ -1,6 +1,6 @@
 #include "hzpch.h"
 #include "Application.h"
-#include "Hazel/Input.h"
+#include "Hazel/Core/Input.h"
 #include "Hazel/Renderer/Renderer.h"
 
 #include <GLFW/glfw3.h> // included for time move to platform
