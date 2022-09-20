@@ -33,15 +33,11 @@ void Sandbox2D::OnUpdate(Hazel::Timestep timestep)
 	// BEGIN SCENE
 	Hazel::Renderer2D::BeginScene(m_CameraController.GetCamera());
 
-	Hazel::Renderer2D::DrawQuad({ 0.0f, 0.0f }, { 1.0f, 1.0f }, m_SquareColor);
+	Hazel::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, m_SquareColor);
+	Hazel::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.8f, 0.75f }, m_SquareColor);
 
 	Hazel::Renderer2D::EndScene();
 }
-	//// TODO: Add these functions -  Shader::SetMat4, Shader::SetFloat4
-	//std::dynamic_pointer_cast<Hazel::OpenGLShader>(m_FlatColorShader)->Bind();
-	//std::dynamic_pointer_cast<Hazel::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat4("u_Color", m_SquareColor);
-
-	//Hazel::Renderer2D::Submit(m_FlatColorShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 void Sandbox2D::OnImGuiRender()
 {
