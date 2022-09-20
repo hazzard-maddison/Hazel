@@ -1,9 +1,12 @@
 #include <Hazel.h>
+#include <Hazel/Core/EntryPoint.h>
+
 #include "Platform/OpenGL/OpenGLShader.h"
-//#include <Hazel/Renderer/OrthographicCamera.h>
 #include <imgui/imgui.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+
+#include "Sandbox2D.h"
 
 class ExampleLayer : public Hazel::Layer{
 
@@ -13,7 +16,7 @@ public:
 		{
 
 			// Triangle
-			m_VertexArray.reset(Hazel::VertexArray::Create());
+			m_VertexArray = Hazel::VertexArray::Create();
 
 			float vertices[7 * 3] = {
 				-0.5f, -0.5f, 0.0f,    1.0f, 1.0f, 0.0f, 1.0f,
@@ -72,7 +75,7 @@ public:
 			m_Shader = Hazel::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 			// Square
-			m_SquareVA.reset(Hazel::VertexArray::Create());
+			m_SquareVA = Hazel::VertexArray::Create();
 
 			float squareVertices[4 * 5] = {
 				-0.5f, -0.5f, 0.0f,   0.0f, 0.0f,
@@ -176,7 +179,7 @@ public:
 		Hazel::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle
-		//Hazel::Renderer::Submit(m_Shader, m_VertexArray);
+		Hazel::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Hazel::Renderer::EndScene();
 		// END SCENE
@@ -218,9 +221,8 @@ class Sandbox : public Hazel::Application
 public:
 	Sandbox() : Application()
 	{
-		PushOverlay(new ExampleLayer());
-
-		
+		// PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 
 	}
 
