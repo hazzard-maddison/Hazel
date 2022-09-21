@@ -18,7 +18,7 @@ namespace Hazel {
 
 		case RendererAPI::API::OpenGL :
 			{
-				return std::make_shared<OpenGLVertexBuffer>(vertices, size);
+				return CreateRef<OpenGLVertexBuffer>(vertices, size);
 			}break;
 
 		};
@@ -39,7 +39,7 @@ namespace Hazel {
 
 		case RendererAPI::API::OpenGL:
 		{
-			return std::make_shared<OpenGLIndexBuffer>(indices, size);
+			return CreateRef<OpenGLIndexBuffer>(indices, size);
 		}break;
 
 		};

@@ -15,6 +15,8 @@ namespace Hazel {
 
 	Application::Application()
 	{
+		HZ_PROFILE_FUNCTION();
+
 		HZ_CORE_ASSERT(!s_Instance, "Application already exists");
 		s_Instance = this;
 
@@ -29,52 +31,31 @@ namespace Hazel {
 
 	Application::~Application()
 	{
-		
-	}
+		HZ_PROFILE_FUNCTION();
 
-	void Application::Run()
-	{
-		
-		while (m_Running)
-		{
-			float time = (float)glfwGetTime(); // TODO: Platform::GetTime
-			Timestep timestep = time - m_LastFrameTime;
-			m_LastFrameTime = time;
-			
-			// pause updating if window is minimized
-			if (!m_Minimized)
-			{
-				// update layerstack
-				for (Layer* layer : m_LayerStack)
-					layer->OnUpdate(timestep);
-
-			}
-
-			// update ImGUI
-			// TODO: handle pausing and minimizing undocked ImGUI windows
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
-			m_ImGuiLayer->End();
-
-			m_Window->OnUpdate();
-
-			//Update();
-		}
+		Renderer::Shutdown();
 	}
 
 	void Application::PushLayer(Layer* layer)
 	{
+		HZ_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
+		HZ_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(overlay);
+		overlay->OnAttach();
 	}
 
 	void Application::OnEvent(Event& event)
 	{
+		HZ_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(event);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
@@ -88,6 +69,49 @@ namespace Hazel {
 		}
 	}
 
+	void Application::Run()
+	{
+		HZ_PROFILE_FUNCTION();
+		
+		while (m_Running)
+		{
+			HZ_PROFILE_SCOPE("RunLoop");
+
+			float time = (float)glfwGetTime(); // TODO: Platform::GetTime
+			Timestep timestep = time - m_LastFrameTime;
+			m_LastFrameTime = time;
+			
+			// pause updating if window is minimized
+			if (!m_Minimized)
+			{
+				{
+					HZ_PROFILE_SCOPE("LayerStack OnUpdate");
+
+					// update layerstack
+					for (Layer* layer : m_LayerStack)
+						layer->OnUpdate(timestep);
+				}
+			
+				// update ImGUI
+				// TODO: handle pausing and minimizing undocked ImGUI windows
+				m_ImGuiLayer->Begin();
+				{
+					HZ_PROFILE_SCOPE("LayerStack OnImGuiRender");
+					for (Layer* layer : m_LayerStack)
+						layer->OnImGuiRender();
+				}
+				m_ImGuiLayer->End();
+
+			}
+
+
+			m_Window->OnUpdate();
+
+			//Update();
+		}
+	}
+
+
 	bool Application::OnWindowClose(WindowCloseEvent& event)
 	{
 		m_Running = false;
@@ -96,6 +120,8 @@ namespace Hazel {
 
 	bool Application::OnWindowResize(WindowResizeEvent& event)
 	{
+		HZ_PROFILE_FUNCTION();
+
 		if (event.GetWidth() == 0 || event.GetHeight() == 0)
 		{
 			m_Minimized = true;
