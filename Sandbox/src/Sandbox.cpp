@@ -8,6 +8,7 @@
 
 #include "Sandbox2D.h"
 
+
 class ExampleLayer : public Hazel::Layer{
 
 public:
@@ -223,7 +224,6 @@ public:
 	{
 		// PushLayer(new ExampleLayer());
 		PushLayer(new Sandbox2D());
-
 	}
 
 	~Sandbox()
