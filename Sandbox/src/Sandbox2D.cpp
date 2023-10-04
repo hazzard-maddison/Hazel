@@ -1,5 +1,5 @@
 #include "Sandbox2D.h"
-#include "Platform/OpenGL/OpenGLShader.h"
+// #include "Platform/OpenGL/OpenGLShader.h"
 #include <imgui/imgui.h>
 #include <glm/gtc/type_ptr.hpp>
 
@@ -52,9 +52,9 @@ void Sandbox2D::OnUpdate(Hazel::Timestep timestep)
 
 		auto rotation = glm::radians(45.0f);
 
-		Hazel::Renderer2D::DrawQuad({-5.0f, 0.0f}, {1.0f, 1.0f}, red);
-		Hazel::Renderer2D::DrawQuad({-4.5f, 0.0f, -0.1f}, {1.0f, 1.0f}, blue);
-		Hazel::Renderer2D::DrawQuad({-3.0f, 0.0f}, {1.0f, 1.0f}, m_CheckerboardTexture);
+		Hazel::Renderer2D::DrawQuad({-1.0f, 0.0f}, {0.8f, 0.8f}, red);
+		Hazel::Renderer2D::DrawQuad({0.5f, -0.5f}, {0.5f, 0.75f}, blue);
+		/*Hazel::Renderer2D::DrawQuad({-3.0f, 0.0f}, {1.0f, 1.0f}, m_CheckerboardTexture);
 		Hazel::Renderer2D::DrawQuad({ -2.5f, 0.0f, -0.1f }, { 1.0f, 1.0f }, m_CheckerboardTexture, 10.0f);
 		Hazel::Renderer2D::DrawQuad({-1.0f, 0.0f, 0.0f}, {1.0f, 1.0f}, m_CheckerboardTexture, green);
 
@@ -64,7 +64,7 @@ void Sandbox2D::OnUpdate(Hazel::Timestep timestep)
 		Hazel::Renderer2D::DrawRotatedQuad({5.0f, 0.0f}, rotation, {2.0f, 2.0f}, m_CheckerboardTexture);
 		Hazel::Renderer2D::DrawRotatedQuad({6.0f, 0.0f, 0.1}, rotation, {2.0f, 2.0f}, m_CheckerboardTexture, 10.0f);
 
-		Hazel::Renderer2D::DrawRotatedQuad({9.0f, 0.0f, 0.1}, rotation, {2.0f, 2.0f}, m_CheckerboardTexture, blue);
+		Hazel::Renderer2D::DrawRotatedQuad({9.0f, 0.0f, 0.1}, rotation, {2.0f, 2.0f}, m_CheckerboardTexture, blue);*/
 
 
 		Hazel::Renderer2D::EndScene();
@@ -75,9 +75,9 @@ void Sandbox2D::OnImGuiRender()
 {
 	HZ_PROFILE_FUNCTION();
 
-	ImGui::Begin("Settings");
-	ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
-	ImGui::End();
+	//ImGui::Begin("Settings");
+	//ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
+	//ImGui::End();
 }
 
 void Sandbox2D::OnEvent(Hazel::Event& event)
